@@ -1,0 +1,13 @@
+<suite name="Selenium Test Suite" parallel="tests" thread-count="2">
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="LoginTest"/>
+            <class name="HomePageTest"/>
+            <class name="CartPageTest"/>
+            <class name="CheckOutStep1Test"/>
+            <class name="CheckOutStep2Test"/>
+        </classes>
+    </test>
+
+</suite>
