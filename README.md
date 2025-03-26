@@ -2,7 +2,7 @@
 ```markdown
 # SauceDemo Test Cases
 
-code Source > Test
+code src > Test/Java
 
 ## Testing Web URL
 [https://www.saucedemo.com/v1/index.html](https://www.saucedemo.com/v1/index.html)
