@@ -28,6 +28,7 @@ public class HomePage {
 
     private By burgerButton = By.xpath("//*[@id=\"menu_button_container\"]/div/div[3]/div/button");
     private By closeButton = By.xpath("//button[text()='Close Menu']");
+    private By navLogOutButton = By.xpath("//a[@id='logout_sidebar_link']");
 
     private By inventoryContainer = By.className("bm-overlay");
     // Constructor
@@ -116,6 +117,14 @@ public class HomePage {
 
     public WebElement getLeftNavigationCloseButton(){
         return driver.findElement(closeButton);
+    }
+
+    public WebElement getRemoveButtonOfProductName(String name){
+        return driver.findElement(By.xpath("//div[text()='"+ name+"/ancestor::div[@class='inventory_item']//button[@class ='btn_secondary btn_inventory']"));
+    }
+
+    public WebElement getNavigationLogOutButton(){
+        return driver.findElement(navLogOutButton);
     }
 
     //Get Dropbar Select Price High to Low

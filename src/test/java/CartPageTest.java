@@ -39,6 +39,7 @@ public class CartPageTest extends baseTest{
         cartPage.getRemoveButtonOfProductName(productNames.get(1)).click();
         cartPage.getRemoveButtonOfProductName(productNames.get(2)).click();
 
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
        Assert.assertEquals(cartPage.getProductsNameAsElement().size(),2);
     }
 

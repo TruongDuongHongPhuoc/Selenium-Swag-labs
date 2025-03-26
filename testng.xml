@@ -7,6 +7,7 @@
             <class name="CartPageTest"/>
             <class name="CheckOutStep1Test"/>
             <class name="CheckOutStep2Test"/>
+            <class name="ProductDetailPageTest"/>
         </classes>
     </test>
 

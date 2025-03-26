@@ -55,6 +55,15 @@ public class CheckOutStep2Test extends baseTest{
         Assert.assertNotEquals(currentURL,driver.getCurrentUrl());
     }
 
+    @Test
+    public void verifyTotalPrice(){
+        CartPage cartPage = new CartPage(driver);
+        driver.get("https://www.saucedemo.com/v1/checkout-step-two.html");
+        Float totalPriceOfProduct = cartPage.getCheckOutStep2TotalProductPrice();
+        Float totalAfterTax = totalPriceOfProduct + cartPage.getCheckOutStep2TaxAsFloat();
+        Assert.assertEquals(cartPage.getCheckOutStep2TotalAsFloat(),totalAfterTax);
+    }
+
     public Float getProductPriceFromListMap(List<Map<String, Float>> maps, String productName) {
         for (Map<String, Float> map : maps) {
             if (map.containsKey(productName)) {

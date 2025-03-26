@@ -118,8 +118,6 @@ public class HomePageTest extends baseTest{
         HomePage homePage = new HomePage(driver);
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 
-
-
         homePage.getBurgerButton().click();
         WebElement isNavigationOpened = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='bm-item-list']")));
 
@@ -165,6 +163,21 @@ public class HomePageTest extends baseTest{
         // ✅ Assertion with meaningful message
         Assert.assertTrue(isNavigationClosed, "Sidebar did not close when clicking outside.");
     }
+
+    @Test(priority = 99)
+    public void TestLogOut(){
+        HomePage homePage = new HomePage(driver);
+        driver.get("https://www.saucedemo.com/v1/inventory.html");
+        homePage.getBurgerButton().click();
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='logout_sidebar_link']")));
+
+        homePage.getNavigationLogOutButton().click();
+        Assert.assertTrue(wait.until(ExpectedConditions.urlContains("index.html")));
+
+    }
+
 
 
 

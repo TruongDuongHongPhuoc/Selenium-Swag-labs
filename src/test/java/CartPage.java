@@ -144,7 +144,7 @@ public class CartPage {
     }
     public Float getCheckOutStep2TaxAsFloat() {
         String taxString = driver.findElement(checkOutStep2Tax).getText();
-        taxString = taxString.replace("$","");
+        taxString = taxString.replace("Tax: $","");
         return Float.valueOf(taxString);
     }
 
@@ -153,8 +153,8 @@ public class CartPage {
     }
 
     public Float getCheckOutStep2TotalAsFloat() {
-        String totalString = driver.findElement(checkOutStep2Tax).getText();
-        totalString = totalString.replace("$","");
+        String totalString = driver.findElement(checkOutStep2Total).getText();
+        totalString = totalString.replace("Total: $","");
         return Float.valueOf(totalString);
     }
 
@@ -171,6 +171,17 @@ public class CartPage {
         String productPriceText = productPriceElement.getText();
         productPriceText = productPriceText.replace("$","");
         return Float.valueOf(productPriceText);
+    }
+
+    public Float getCheckOutStep2TotalProductPrice(){
+        List<WebElement> productsPriceElements = driver.findElements(By.className("inventory_item_price"));
+        Float total = 0F;
+
+        for(WebElement element : productsPriceElements){
+          total += Float.parseFloat(element.getText().replace("$",""));
+        }
+
+        return total;
     }
 
     public Integer getCheckOutStep2QuantityOfProductName(String productName){
