@@ -53,4 +53,3 @@ code src > Test/Java
 - Verify "Add to Cart" button functionality
 ```
 
-You can copy and paste this into your README file on GitHub. Let me know if you'd like any further adjustments or enhancements! 🚀
